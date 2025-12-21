@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const authMiddleware = require("./middleware/authMiddleware");
+const PORT = process.env.PORT || 5000;
 
 require("dotenv").config();
 
@@ -26,6 +27,6 @@ app.use("/api/cart", require("./routes/cartRoutes"));
 app.use("/api/products", require("./routes/productRoutes"));
 app.use("/api/orders", require("./routes/orderRoutes"));
 
-app.listen(5000, () => {
-  console.log("Server started on port 5000");
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
